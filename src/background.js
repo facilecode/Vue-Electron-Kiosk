@@ -13,18 +13,45 @@ protocol.registerSchemesAsPrivileged([
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
+    
+    //width: 800,
+    //height: 600,
+    
     /*
-    width: 800,
-    height: 600,
-    */
+    Part 3
     fullscreen: true,
+    frame:null,
+    */
+
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
+      /* Part 3
       devTools: false
+      */
     }
   })
+  /* Part 3
+  win.setMenu(null)
+  
+  win.webContents.on('before-input-event', (event, input) => {
+    if (input.control && input.key.toLocaleLowerCase() === 'q') {
+      console.log("pressed Ctrl Q")
+      event.preventDefault()
+    }
+    if (input.control && input.key.toLocaleLowerCase() === 'w') {
+      console.log("pressed Ctrl W")
+      event.preventDefault()
+    }
+    if (input.key.toLocaleLowerCase() === 'f11') {
+      console.log("pressed F11")
+      event.preventDefault()
+    }
+
+    console.log(input.key.toLocaleLowerCase())
+  })
+  */
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
@@ -65,6 +92,7 @@ app.on('ready', async () => {
     }
   }
   createWindow()
+
 })
 
 // Exit cleanly on request from parent process in development mode.

@@ -13,28 +13,16 @@ protocol.registerSchemesAsPrivileged([
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    
-    //width: 800,
-    //height: 600,
-    
-    /*
-    Part 3
+    /* Part 3 */
     fullscreen: true,
-    frame:null,
-    */
 
     webPreferences: {
-      // Use pluginOptions.nodeIntegration, leave this alone
-      // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
-      
+      /* Part 3 */
       devTools: false
-      
     }
   })
-  /* Part 3
-  win.setMenu(null)
-  
+  /* Part 3 - shortcuts */ 
   win.webContents.on('before-input-event', (event, input) => {
     if (input.control && input.key.toLocaleLowerCase() === 'q') {
       console.log("pressed Ctrl Q")
@@ -48,11 +36,8 @@ async function createWindow() {
       console.log("pressed F11")
       event.preventDefault()
     }
-
-    console.log(input.key.toLocaleLowerCase())
   })
-  */
-
+  /* shortcuts */
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)

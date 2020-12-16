@@ -5,20 +5,12 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Serve with Electron
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+npm run electron:serve
 ```
 
-### Lints and fixes files
+### Build App with Electron
 ```
-npm run lint
+npm run electron:build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

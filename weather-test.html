@@ -1,0 +1,35 @@
+<!-- Requirements -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"
+></script> 
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.0/vue.js"
+></script> 
+ 
+<!-- vue-weather-widget -->
+<script type="text/javascript" src="vue-weather-widget.js"></script>
+<link href="vue-weather-widget.css" rel="stylesheet" />
+ 
+<!-- Vue app -->
+<div id="app">
+  <weather
+    api-key="<your-api-key>"
+    latitude="24.886436"
+    longitude="91.880722"
+    language="en"
+    units="uk"
+  >
+  </weather>
+</div>
+ 
+<script>
+  new Vue({
+    el: "#app",
+    components: {
+      weather: VueWeatherWidget,
+    },
+  });
+</script> 

@@ -24,16 +24,10 @@ async function createWindow() {
   })
   /* Part 3 - shortcuts */ 
   win.webContents.on('before-input-event', (event, input) => {
-    if (input.control && input.key.toLocaleLowerCase() === 'q') {
-      console.log("pressed Ctrl Q")
-      event.preventDefault()
-    }
-    if (input.control && input.key.toLocaleLowerCase() === 'w') {
-      console.log("pressed Ctrl W")
-      event.preventDefault()
-    }
-    if (input.key.toLocaleLowerCase() === 'f11') {
-      console.log("pressed F11")
+    if (input.control && input.key.toLocaleLowerCase() === 'q' ||
+        input.control && input.key.toLocaleLowerCase() === 'w' ||
+        input.key.toLocaleLowerCase() === 'f11') 
+    {
       event.preventDefault()
     }
   })
